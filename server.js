@@ -36,4 +36,8 @@ const JobSchema = new mongoose.Schema({
         type: String,
         required: [false]
     }
-})
+});
+
+const Job = mongoose.model("Job", JobSchema);
+
+
