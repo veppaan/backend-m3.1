@@ -70,17 +70,18 @@ app.post("/jobs", async(req, res) => {
 
 app.delete("/jobs/:id", async(req, res) => {
     try{
-        Job.findByIdAndDelete(req.params.id);
+        const deleteJob = await Job.findByIdAndDelete(req.params.id);
+        res.json({message: "Job deleted: " + req.params.id});
     }catch(error){
         res.status(500).json(error);
     }
 });
 
 app.put("/jobs/:id", async(req, res) => {
-    let id = req.params.id;
     try{
-        Job.findByIdAndUpdate(id, req.body,
+        const updateJob = await Job.findByIdAndUpdate(req.params.id, req.body,
             {new: true});
+        res.json({message: "Job updated: " + req.params.id});
     }catch(error){
         return res.status(500).json(error);
     }
