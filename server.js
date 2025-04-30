@@ -67,3 +67,7 @@ app.post("/jobs", async(req, res) => {
         return res.status(400).json(error);
     }
 });
+
+app.listen(port, () => {
+    console.log("Server is running on port: " + port);
+});
