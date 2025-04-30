@@ -41,8 +41,8 @@ const JobSchema = new mongoose.Schema({
 const Job = mongoose.model("Job", JobSchema);
 
 //Routes
-app.get("/api", async(req, res) => {
-    res.json({message: "Welcome to this API"});
+app.get("/", async(req, res) => {
+    res.json({message: "Welcome to this API, different paths to choose from: /jobs with GET or POST and /jobs/:id with UPDATE/PUT and DELETE"});
 });
 
 app.get("/jobs", async(req, res) =>{
