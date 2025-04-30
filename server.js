@@ -21,3 +21,19 @@ mongoose.connect(process.env.MONGODB_URL).then(() => {
 }).catch((error) => {
     console.log("Error connecting to database: " + error);
 });
+
+//Job Schema
+const JobSchema = new mongoose.Schema({
+    companyname: {
+        type: String,
+        required: [true, "Du måste skicka med företagets namn!"]
+    },
+    jobtitle: {
+        type: String,
+        required: [true, "Du måste skicka med jobbtiteln!"]
+    },
+    location: {
+        type: String,
+        required: [false]
+    }
+})
