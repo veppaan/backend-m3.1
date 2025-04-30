@@ -76,6 +76,16 @@ app.delete("/jobs/:id", async(req, res) => {
     }
 });
 
+app.put("/jobs/:id", async(req, res) => {
+    let id = req.params.id;
+    try{
+        Job.findByIdAndUpdate(id, req.body,
+            {new: true});
+    }catch(error){
+        return res.status(500).json(error);
+    }
+})
+
 app.listen(port, () => {
     console.log("Server is running on port: " + port);
 });
