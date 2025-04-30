@@ -1,8 +1,9 @@
 //Hämtar in installerade paket och lägger in i variabler
 const express = require("express");
 const cors = require("cors");
+const env = require("dotenv").config();
 const mongoose = require("mongoose");
-const env = require("dotenv");
+
 
 //Skapar en app med express
 const app = express();
