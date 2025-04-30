@@ -40,4 +40,19 @@ const JobSchema = new mongoose.Schema({
 
 const Job = mongoose.model("Job", JobSchema);
 
+//Routes
+app.get("/api", async(req, res) => {
+    res.json({message: "Welcome to this API"});
+});
 
+app.get("/jobs", async(req, res) =>{
+    try{
+        //Tar ut allt från alla jobb
+        let result = await Job.find({});
+
+        return res.json(result);
+    }catch(error){
+        //Fel på serversidan
+        return res.status(500).json(error);
+    }
+});
