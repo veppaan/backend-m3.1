@@ -10,6 +10,7 @@ Tabellens innehåll:
 - companyname(string)
 - jobtitle(string)
 - location(string)
+- time (läggs till i databasen för att se när jobbet lades in)
 
 
 Användning:
