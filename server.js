@@ -35,6 +35,10 @@ const JobSchema = new mongoose.Schema({
     location: {
         type: String,
         required: [false]
+    },
+    time: {
+        type: Date,
+        default: Date.now
     }
 });
 
